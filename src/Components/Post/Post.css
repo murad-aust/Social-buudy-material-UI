@@ -1,0 +1,5 @@
+.grid{
+   float: left;
+   display: flex;
+   flex-wrap: wrap;
+}
