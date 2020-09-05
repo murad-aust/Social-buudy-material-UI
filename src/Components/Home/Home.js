@@ -11,7 +11,7 @@ const Home = () => {
             .then(data => setPosts(data))
     }, [])
 
-    
+    console.log(posts)
     return (
         <div >
             {

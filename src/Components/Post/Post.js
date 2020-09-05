@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import './Post.css';
 
 import {
-    Grid,
+    Grid,Box,
     Card,
     CardContent,
     Typography,
@@ -14,7 +14,12 @@ import {
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      
+      width: '330px',
+      float: 'left',
+      boxradius: '10px', 
+      margin: '20px 0px',
+   
     },
   });
 
@@ -27,19 +32,20 @@ const Post = (props) => {
 
     
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={{ width: 330, whiteSpace:'nowrap'}}>
              <Container fixed >
                  <div className = "grid">
-                            <Card>
-                                <CardActionArea>
+                            <Card >
+                                <CardActionArea >
 
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h4">
+                                    <CardContent >
+                                        <Typography component="h4">
                                             {title}
                                         </Typography>
-                                        <Typography variant="body2" color="textSecondary" component="p">
-                                            {body}
-                                         </Typography>
+                                        
+                                    <Box component="div" my={2} textOverflow="ellipsis" overflow="hiheritdden" bgcolor="background.paper">
+                                        {body}
+                                    </Box>
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
