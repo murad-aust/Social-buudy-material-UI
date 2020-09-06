@@ -8,13 +8,19 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: '10px',
+    margin: '30px',
+   
    
   },
   paper: {
     padding: theme.spacing(2),
+    width:'800px',
     margin: 'auto',
-    maxWidth: 500,
+    boxShadow: '5px 5px 15px lightgray',
+    border: 'none',
+    borderRadius: '10px',
+    padding: "20px",
+    paddingBottom: '10px'
   },
   image: {
     width: 128,
@@ -23,8 +29,6 @@ const useStyles = makeStyles((theme) => ({
   img: {
     margin: 'auto',
     display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
     borderRadius: '50%',
   },
 }));
@@ -44,7 +48,7 @@ const Comment = (props) => {
     const {name, email, body}= props.comment;
     return (
       <div className={classes.root}>
-        
+      
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
@@ -59,10 +63,10 @@ const Comment = (props) => {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  {name}
+                 Name: {name}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  {email}
+                 Email: {email}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   {body}

@@ -18,6 +18,7 @@ const useStyles = makeStyles({
       float: 'left',
       boxradius: '10px', 
       margin: '20px 0px',
+      marginLeft: '5px',
       minHeight: '120px'
       
    
@@ -50,7 +51,7 @@ const Post = (props) => {
                                    
                                     </CardContent>
                                 </CardActionArea>
-                                <CardActions style={{background:'#F0FFF0' }}>
+                                <CardActions style={{background:'#FFFAF0' }}>
                                    
                                     <Button size="small" color="secondary" onClick={() => handleClick(id)}>
                                         See More

@@ -1,41 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import PostContent from '../PostContent/PostContent';
-import Comment from '../Comment/Comment';
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+    root: {
+      width: '95%',
+      margin: '30px',
+      textAlign: 'center',
+      boxShadow: '5px 5px 15px lightgray',
+      border: 'none',
+      borderRadius: '10px',
+      padding: "20px",
+      paddingBottom: '10px'
+     
+      
+    },
+  });
 
-const PostDetail = () => {
-    const {postId} = useParams();
-    const [post, setPost] = useState({})
-    useEffect(() => {
-        const url= `https://jsonplaceholder.typicode.com/posts/${postId}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setPost(data))
-    }, [])
+const PostDetail = (props) => {
 
-    const [comments, setComments] = useState([])
-    useEffect(() => {
-        const url= `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
-        
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setComments(data))
-    }, [])
- 
+    const {title, body}= props.post;
+    const classes = useStyles();
     return (
-        <div >
-            <div>
-              <PostContent post={post}></PostContent>
-            </div>
-            <div>
-            <h1 style={{textAlign:'center'}}>Comments</h1>
-                {
-                comments.map(comment => <Comment comment={comment}></Comment>)
 
-                }
-               
-            </div>
+     
+        <div className={classes.root} >
+
+      <CssBaseline />
+      <Container fixed>
+      <Typography variant="h4" >
+      {title}
+      </Typography>
+      
+      <Typography variant="body1"  >
+      {body}
+      </Typography>
+      
+      </Container>
+
+      
+      
         </div>
     );
 };
