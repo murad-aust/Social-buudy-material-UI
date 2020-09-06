@@ -24,13 +24,12 @@ const PostDetail = () => {
     }, [])
  
     return (
-        <div>
+        <div >
             <div>
-                <h1>Posts</h1>
               <PostContent post={post}></PostContent>
             </div>
             <div>
-                <h1>Comments</h1>
+            <h1 style={{textAlign:'center'}}>Comments</h1>
                 {
                 comments.map(comment => <Comment comment={comment}></Comment>)
 

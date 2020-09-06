@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link, useHistory } from 'react-router-dom';
-import './Post.css';
 
 import {
     Grid,Box,
@@ -19,6 +18,7 @@ const useStyles = makeStyles({
       float: 'left',
       boxradius: '10px', 
       margin: '20px 0px',
+      minHeight: '120px'
       
    
     },
@@ -33,14 +33,14 @@ const Post = (props) => {
 
     
     return (
-        <div className={classes.root} style={{ whiteSpace:'nowrap', textOverflow: "ellipsis" , overflow:"hidden" }}>
+        <div className={classes.root}  >
              <Container fixed >
              
-                            <Card style={{background:'lightblue'}}>
-                                <CardActionArea >
+                            <Card >
+                                <CardActionArea style={{background:'#F0FFF0',height:'130px', textOverflow: "ellipsis", overflow: 'hidden'}}>
 
                                     <CardContent >
-                                        <Typography component="h4">
+                                        <Typography component="h2">
                                             {title}
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary" component="p">
@@ -50,10 +50,10 @@ const Post = (props) => {
                                    
                                     </CardContent>
                                 </CardActionArea>
-                                <CardActions>
+                                <CardActions style={{background:'#F0FFF0' }}>
                                    
-                                    <Button size="small" color="primary" onClick={() => handleClick(id)}>
-                                        Learn More
+                                    <Button size="small" color="secondary" onClick={() => handleClick(id)}>
+                                        See More
                                     </Button>
                                 </CardActions>
                             </Card>

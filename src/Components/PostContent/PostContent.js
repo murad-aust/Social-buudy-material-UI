@@ -7,7 +7,11 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     root: {
       width: '100%',
-      maxWidth: 500,
+      margin: '20px',
+      padding: '20px',
+      textAlign: 'center'
+     
+      
     },
   });
 
@@ -16,16 +20,23 @@ const PostContent = (props) => {
     const {title, body}= props.post;
     const classes = useStyles();
     return (
-        <div className={classes.root}>
 
+     
+        <div className={classes.root} >
 
-      <Typography variant="h4" gutterBottom>
+      <CssBaseline />
+      <Container fixed>
+      <Typography variant="h4" >
       {title}
       </Typography>
       
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body1"  >
       {body}
       </Typography>
+      
+      </Container>
+
+      
       
         </div>
     );
