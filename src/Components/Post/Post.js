@@ -19,6 +19,7 @@ const useStyles = makeStyles({
       float: 'left',
       boxradius: '10px', 
       margin: '20px 0px',
+      
    
     },
   });
@@ -32,20 +33,21 @@ const Post = (props) => {
 
     
     return (
-        <div className={classes.root} style={{ width: 330, whiteSpace:'nowrap'}}>
+        <div className={classes.root} style={{ whiteSpace:'nowrap', textOverflow: "ellipsis" , overflow:"hidden" }}>
              <Container fixed >
-                 <div className = "grid">
-                            <Card >
+             
+                            <Card style={{background:'lightblue'}}>
                                 <CardActionArea >
 
                                     <CardContent >
                                         <Typography component="h4">
                                             {title}
                                         </Typography>
-                                        
-                                    <Box component="div" my={2} textOverflow="ellipsis" overflow="hiheritdden" bgcolor="background.paper">
+                                        <Typography variant="body2" color="textSecondary" component="p">
                                         {body}
-                                    </Box>
+                                         </Typography>
+                                        
+                                   
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
@@ -55,7 +57,7 @@ const Post = (props) => {
                                     </Button>
                                 </CardActions>
                             </Card>
-                    </div> 
+                    
             </Container>
 
         </div>

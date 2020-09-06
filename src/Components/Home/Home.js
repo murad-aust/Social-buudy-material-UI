@@ -11,9 +11,9 @@ const Home = () => {
             .then(data => setPosts(data))
     }, [])
 
-    console.log(posts)
+    
     return (
-        <div >
+        <div style={{}}>
             {
                 posts.map(post => <Post post={post}></Post>)
             }
